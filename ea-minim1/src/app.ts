@@ -12,12 +12,16 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 //Import Routes
 const studentRoute = require('./routes/students');
 const subjectRoute = require('./routes/subjects');
+const resultsRoute = require('./routes/results');
+
 
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/std', studentRoute);
 app.use('/sbj', subjectRoute);
+app.use('/res', resultsRoute);
+
 
 
 // Connect to DB
